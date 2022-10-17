@@ -7,8 +7,9 @@
             <div class="right-sidebar__entity">
 				<?php if ( has_post_thumbnail() ): ?>
                     <div class="entity-img"
-                         style="background: url(<?php echo get_the_post_thumbnail_url( $item->ID ); ?>) center center no-repeat;background-size: cover;"></div>
-                    <!--<img src="--><?php //echo get_the_post_thumbnail_url( $item->ID ); ?><!--" alt="">-->
+                         style="background: url(<?php
+					     echo get_the_post_thumbnail_url( $item->ID );
+					     ?>) center center no-repeat;background-size: cover;"></div>
 				<?php else: ?>
                     <img src="<?php echo get_template_directory_uri() . '/assets/img/no_image.png'; ?>" alt="">
 				<?php endif; ?>
