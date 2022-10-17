@@ -1,0 +1,147 @@
+//bootstrap styles
+@import "../../node_modules/bootstrap/scss/bootstrap-reboot";
+@import "../../node_modules/bootstrap/scss/bootstrap-grid";
+@import "../../node_modules/bootstrap/scss/breadcrumb";
+@import "animate";
+@import "404";
+
+//common
+@import "_fonts";
+@import "_functions";
+@import "_indents";
+@import "_pagination";
+@import "country";
+
+//application styles
+@import "_colors";
+@import "_html-body";
+@import "_mixins";
+
+//layout
+@import "../layout/header/header";
+@import "../layout/featured/features";
+
+//components
+@import "../components/common/breadcrumb/breadcrumb";
+@import "../components/index/top-news";
+@import "../components/index/categories";
+@import "category-news";
+@import "single-post";
+@import "featured-posts";
+@import "page";
+
+//layout
+@import "../layout/right-sidebar/right-sidebar";
+//@import "../layout/right-sidebar/right-sidebar-single-post";
+@import "../layout/footer/footer";
+@import "tags";
+
+@import "search";
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#breadcrumbs {
+  a {
+    text-decoration: none;
+    color: #0068b2;
+  }
+}
+
+.col-style {
+  -webkit-box-shadow: 20px 20px 5px -21px rgba(34, 60, 80, 0.6);
+  -moz-box-shadow: 20px 20px 5px -21px rgba(34, 60, 80, 0.6);
+  box-shadow: 20px 20px 5px -21px rgba(34, 60, 80, 0.6);
+  border-radius: 5px;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+img {
+  border-radius: 5px;
+}
+
+.more {
+  padding: $_5px;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+
+  .more__img {
+    max-width: 30px;
+  }
+
+  .more__link {
+    text-decoration: none;
+    color: grey;
+    font-size: 13px;
+  }
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  background: url('../../assets/img/x.svg') no-repeat center center;
+  background-size: contain;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+
+  .screen-reader-text {
+    display: inline-block;
+  }
+
+  .search-form-input__value {
+    width: 50%;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    outline: none;
+    padding-right: 10px;
+  }
+
+  .search-form__button {
+    border: none;
+    outline: none;
+    background: transparent;
+    height: 30px;
+    width: 30px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background: url('../../assets/img/search-gray.svg') no-repeat center center;
+      background-size: contain;
+    }
+  }
+}
+
+.post-paragraph {
+  p {
+    text-indent: 15px;
+  }
+}
+
+.card-custom {
+  box-shadow: 0 3px 10px #0000002e;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+}

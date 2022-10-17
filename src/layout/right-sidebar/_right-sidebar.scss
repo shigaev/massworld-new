@@ -1,0 +1,68 @@
+.right-sidebar {
+  border-left: 1px solid rgba(218, 218, 218, 1);
+  padding: 0 1.2rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+
+  &__title {
+    @include title;
+    margin: $_10px 0;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: $_10px 0;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 120px;
+    background-size: contain !important;
+  }
+
+  &__name {
+    padding: 0 1rem;
+    font-size: $_24px;
+  }
+
+  &__news {
+
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $black;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000000;
+    transition: .2s;
+
+    &:hover {
+      color: #acacac;
+    }
+  }
+
+  &__entity {
+    display: flex;
+    align-items: center;
+
+    img {
+      max-width: 70px;
+    }
+
+    p {
+      padding: 0 10px;
+      margin: 0;
+    }
+
+    .entity-img {
+      width: 70px;
+      height: 40px;
+      margin: 5px 0;
+    }
+  }
+}

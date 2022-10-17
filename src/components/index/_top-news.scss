@@ -1,0 +1,145 @@
+.top-news {
+  border-bottom: 1px solid #dadada;
+
+  &__title {
+    @include title;
+    padding: 0;
+    font-weight: 600;
+  }
+}
+
+.top-news-upper {
+  margin: 0 0 $_20px 0;
+
+  @media screen and (max-width: 992px) {
+    margin: 0 0 $_5px 0;
+  }
+
+  .upper-news {
+    text-decoration: none;
+
+    &__article {
+      display: flex;
+      color: $black;
+
+      @media screen and (max-width: 424px) {
+        display: block;
+      }
+
+    }
+
+    &__title {
+      @include title;
+
+      @media screen and (max-width: 992px) {
+        font-size: 16px;
+        //padding: 0;
+      }
+
+      @media screen and (max-width: 424px) {
+        padding: $_5px 0;
+      }
+    }
+
+    .excerpt {
+      padding: 10px 0 25px 0;
+    }
+
+    &__img {
+      max-width: 1400px;
+      width: 1400px;
+
+      @media screen and (max-width: 992px) {
+        max-width: 300px;
+        width: 300px;
+        height: 120px;
+      }
+
+      @media screen and (max-width: 424px) {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+
+    &__text {
+      padding: 0 $_10px;
+      font-family: 'Roboto', sans-serif;
+      position: relative;
+
+      @media screen and (max-width: 992px) {
+        flex-basis: 60%;
+      }
+
+      @media screen and (max-width: 424px) {
+        padding: 0;
+      }
+
+      .excerpt {
+        @media screen and (max-width: 992px) {
+          display: none;
+        }
+      }
+
+      .post-time {
+        position: absolute;
+        padding: 0;
+        bottom: 0;
+
+        @media screen and (max-width: 992px) {
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
+.top-news-lower {
+  .lower-news {
+    text-decoration: none;
+    display: block;
+
+    // parent block
+    &__article {
+      display: flex;
+      color: $black;
+      margin: 0 0 10px 0;
+
+      @media screen and (max-width: 992px) {
+        margin: 5px 0;
+      }
+
+      @media screen and (max-width: 424px) {
+        display: block;
+      }
+    }
+
+    // child block
+    &__img {
+      max-width: 300px;
+      width: 300px;
+      height: 120px;
+
+      @media screen and (max-width: 424px) {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+
+    // child block
+    &__text {
+      padding: 0 $_10px;
+      flex-basis: 60%;
+      position: relative;
+
+      @media screen and (max-width: 424px) {
+        padding: $_5px 0;
+      }
+    }
+
+    .post-time {
+      @media screen and (max-width: 424px) {
+        padding: 0;
+      }
+    }
+  }
+}

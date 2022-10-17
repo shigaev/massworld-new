@@ -1,0 +1,25 @@
+.error-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //background: url("../../assets/img/404-bg.jpg") center center no-repeat;
+  //background-size: cover;
+
+  .error {
+    text-align: center;
+
+    &__text {
+      font-size: 50px;
+    }
+
+    &__error {
+      font-size: 125px;
+      font-weight: bold;
+    }
+
+    &__link {
+      text-decoration: none;
+    }
+  }
+}

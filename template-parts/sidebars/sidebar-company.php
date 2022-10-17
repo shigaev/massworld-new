@@ -1,0 +1,1 @@
+<h2>Sidebar company</h2>

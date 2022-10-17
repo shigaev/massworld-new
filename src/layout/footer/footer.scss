@@ -1,0 +1,55 @@
+.footer {
+  color: #ffffff;
+  background-color: $granite;
+  margin-top: auto !important;
+  padding: $_10px 0;
+
+  &-top {
+
+  }
+
+  &-menu {
+
+  }
+
+  &-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+
+    &__item {
+      padding: 5px;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: #ffffff;
+      svg {
+        fill: white;
+        width: 25px;
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid #4b4b4bf7;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .copyright {
+    padding: $_10px 0 0 0;
+    margin: 0;
+  }
+
+  .admin-email {
+    padding: $_10px 0 0 0;
+    margin: 0;
+
+    a {
+      text-decoration: none;
+      color: #ffffff;
+    }
+  }
+}

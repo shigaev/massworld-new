@@ -1,0 +1,43 @@
+.single-post {
+  max-width: 1080px;
+  margin: 0 auto;
+
+  img {
+    padding: $_10px;
+  }
+
+  .post-paragraph {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.7;
+    //max-width: 700px;
+    //margin: auto;
+
+    p {
+      padding: 0 20px;
+    }
+
+    .date-author {
+      padding: $_10px 0;
+      //margin-top: auto;
+      margin: 15px 0;
+      border-top: 1px solid #dadada;
+      border-bottom: 1px solid #dadada;
+      font-size: 13px;
+
+      &__item {
+
+      }
+
+      &__self {
+
+      }
+    }
+  }
+
+  .quote {
+    font-family: 'Roboto Thin Italic', sans-serif;
+    border-left: 2px solid $medium-persian-blue;
+  }
+}

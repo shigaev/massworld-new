@@ -1,0 +1,29 @@
+html {
+  height: 100% !important;
+}
+
+body {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  font-family: 'Roboto Light', sans-serif;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .content-wrap {
+    padding-bottom: 1rem;
+  }
+}
+
+body.active {
+  overflow: hidden;
+}

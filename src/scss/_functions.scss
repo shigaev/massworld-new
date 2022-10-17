@@ -1,0 +1,7 @@
+@function widthColumn($column, $padding) {
+  @if $padding == '' {
+    @return calc(100% / 12 * #{$column})
+  } @else {
+    @return calc(100% / 12 * #{$column} - #{$padding}px)
+  }
+}

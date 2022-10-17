@@ -1,0 +1,30 @@
+.main-country {
+  display: flex;
+  text-decoration: none;
+
+  .main-country__item {
+    display: inline-block;
+    width: 70px;
+    height: 40px;
+  }
+
+  .main-country__title {
+    padding: 0 10px;
+    color: #000000;
+    font-size: 18px;
+  }
+}
+
+.single-country {
+  .single-country__title {
+
+  }
+
+  .single-country__image {
+    max-width: 300px;
+  }
+
+  .single-country__region {
+    padding: 10px 0;
+  }
+}
