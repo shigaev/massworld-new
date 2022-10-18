@@ -1,6 +1,12 @@
 .main-country {
   display: flex;
   text-decoration: none;
+  align-items: center;
+  transition: .2s;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
 
   .main-country__item {
     display: inline-block;
@@ -10,8 +16,17 @@
 
   .main-country__title {
     padding: 0 10px;
+    margin: 0;
     color: #000000;
     font-size: 18px;
+  }
+}
+
+.main-country.region {
+  padding: 10px;
+
+  .main-country__title {
+    color: #0068b2;
   }
 }
 
@@ -26,5 +41,32 @@
 
   .single-country__region {
     padding: 10px 0;
+  }
+}
+
+.country-link {
+  text-decoration: none;
+  color: #000000;
+  transition: .2s;
+
+  &:hover {
+    color: #acacac;
+  }
+
+  .country {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+
+    .country-img {
+      width: 70px;
+      height: 40px;
+      display: inline-block;
+    }
+
+    .country-name {
+      display: inline-block;
+      padding: 0 5px;
+    }
   }
 }

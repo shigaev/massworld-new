@@ -1,65 +1,56 @@
 <?php get_header(); ?>
-    <div id="primary">
-        <div id="content" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+<?php while ( have_posts() ) : the_post(); ?>
 
-                <article>
-                    <header class="entry-header">
-                        <h1 class="entry-title"><?php the_title(); ?></h1>
-                    </header>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="single-country py-3">
+                <h1 class="single-country__title"><?php the_title(); ?></h1>
+                <h2 class="single-country__region">Conutries:</h2>
+				<?php
+				$countries = get_posts( array(
+					'post_type'  => 'countries',
+					'meta_query' => array(
+						array(
+							'key'     => 'region',
+							'value'   => '"' . get_the_ID() . '"',
+							'compare' => 'LIKE'
+						)
+					)
+				) );
+				?>
+                <div class="row">
+					<?php if ( $countries ): ?>
+						<?php foreach ( $countries as $country ): ?>
 
-                    <div class="entry-content">
-                        <h2>Region</h2>
-                        <p><?php the_field( 'region' ); ?></p>
+                            <div class="col-md-4">
+                                <a class="country-link" href="<?php echo get_permalink( $country->ID ); ?>">
+                                    <div class="country">
+                                        <div class="country-img"
+                                             style="background: url(<?php
+										     echo get_the_post_thumbnail_url( $country->ID );
+										     ?>) center center no-repeat;background-size: cover;">
+                                        </div>
+                                        <div class="country-name">
+											<?php echo get_the_title( $country->ID ); ?>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
 
-                        <h2>Conutries:</h2>
-						<?php
 
-						/*
-						*  Query posts for a relationship value.
-						*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
-						*/
+						<?php endforeach; ?>
+					<?php endif; ?>
+                </div>
 
-						$doctors = get_posts( array(
-							'post_type'  => 'countries',
-							'meta_query' => array(
-								array(
-									'key'     => 'region',
-									// name of custom field
-									'value'   => '"' . get_the_ID() . '"',
-									// matches exactly "123", not just 123. This prevents a match for "1234"
-									'compare' => 'LIKE'
-								)
-							)
-						) );
+            </div>
+        </div>
+        <div class="col-md-4">
+	        <?php get_template_part( 'template-parts/sidebars/sidebar', 'index' ) ?>
+        </div>
+    </div>
 
-						?>
-						<?php if ( $doctors ): ?>
-                            <ul>
-								<?php foreach ( $doctors as $doctor ): ?>
-									<?php
 
-									$photo = get_field( 'photo', $doctor->ID );
+<?php endwhile; ?>
 
-									?>
-                                    <li>
-                                        <a href="<?php echo get_permalink( $doctor->ID ); ?>">
-                                            <img src="<?php //echo $photo['url']; ?>" alt="<?php echo $photo['alt']; ?>"
-                                                 width="30"/>
-											<?php echo get_the_title( $doctor->ID ); ?>
-                                        </a>
-                                    </li>
-								<?php endforeach; ?>
-                            </ul>
-						<?php endif; ?>
-
-                    </div>
-
-                </article>
-
-			<?php endwhile; // end of the loop. ?>
-
-        </div><!-- #content -->
-    </div><!-- #primary -->
 <?php get_footer(); ?>
