@@ -299,37 +299,35 @@ add_action( 'init', function () {
 	register_post_type( 'countries', [
 		'label'         => null,
 		'labels'        => [
-			'name'               => 'All countries', // основное название для типа записи
-			'singular_name'      => 'Country', // название для одной записи этого типа
-			'add_new'            => 'Добавить country', // для добавления новой записи
-			'add_new_item'       => 'Добавление country', // заголовка у вновь создаваемой записи в админ-панели.
-			'edit_item'          => 'Редактирование countries', // для редактирования типа записи
-			'new_item'           => 'Новое country', // текст новой записи
-			'view_item'          => 'Смотреть country', // для просмотра записи этого типа.
-			'search_items'       => 'Искать country', // для поиска по этим типам записи
-			'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
-			'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
-			'parent_item_colon'  => 'Countries', // для родителей (у древовидных типов)
-			'menu_name'          => 'Countries', // название меню
+			'name'               => 'All countries',
+			'singular_name'      => 'Country',
+			'add_new'            => 'Add country',
+			'add_new_item'       => 'Adding country',
+			'edit_item'          => 'Editing countries',
+			'new_item'           => 'New country',
+			'view_item'          => 'View country',
+			'search_items'       => 'Search country',
+			'not_found'          => 'Not found',
+			'not_found_in_trash' => 'Not found in the trash',
+			'parent_item_colon'  => 'Countries',
+			'menu_name'          => 'Countries',
 		],
 		'description'   => '',
 		'public'        => true,
-		// 'publicly_queryable'  => null, // зависит от public
-		// 'exclude_from_search' => null, // зависит от public
-		// 'show_ui'             => null, // зависит от public
-		// 'show_in_nav_menus'   => null, // зависит от public
+		// 'publicly_queryable'  => null,
+		// 'exclude_from_search' => null,
+		// 'show_ui'             => null,
+		// 'show_in_nav_menus'   => null,
 		'show_in_menu'  => null,
-		// показывать ли в меню адмнки
-		// 'show_in_admin_bar'   => null, // зависит от show_in_menu
+		// 'show_in_admin_bar'   => null,
 		'show_in_rest'  => null,
-		// добавить в REST API. C WP 4.7
 		'rest_base'     => null,
 		// $post_type. C WP 4.7
-		'menu_position' => null,
+		'menu_position' => 4,
 		'menu_icon'     => 'dashicons-admin-site-alt3',
 		//'capability_type'   => 'post',
-		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
-		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
+		//'capabilities'      => 'post',
+		//'map_meta_cap'      => null,
 		'hierarchical'  => false,
 		'supports'      => [ 'title', 'thumbnail' ],
 		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
@@ -341,37 +339,35 @@ add_action( 'init', function () {
 	register_post_type( 'regions', [
 		'label'         => null,
 		'labels'        => [
-			'name'               => 'All regions', // основное название для типа записи
-			'singular_name'      => 'Region', // название для одной записи этого типа
-			'add_new'            => 'Добавить region', // для добавления новой записи
-			'add_new_item'       => 'Добавление region', // заголовка у вновь создаваемой записи в админ-панели.
-			'edit_item'          => 'Редактирование region', // для редактирования типа записи
-			'new_item'           => 'Новое region', // текст новой записи
-			'view_item'          => 'Смотреть region', // для просмотра записи этого типа.
-			'search_items'       => 'Искать region', // для поиска по этим типам записи
-			'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
-			'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
-			'parent_item_colon'  => 'Region', // для родителей (у древовидных типов)
-			'menu_name'          => 'Regions', // название меню
+			'name'               => 'All regions',
+			'singular_name'      => 'Region',
+			'add_new'            => 'Add region',
+			'add_new_item'       => 'Adding region',
+			'edit_item'          => 'Editing region',
+			'new_item'           => 'New region',
+			'view_item'          => 'View region',
+			'search_items'       => 'Search region',
+			'not_found'          => 'Not found',
+			'not_found_in_trash' => 'Not found in the trash',
+			'parent_item_colon'  => 'Region',
+			'menu_name'          => 'Regions',
 		],
 		'description'   => '',
 		'public'        => true,
-		// 'publicly_queryable'  => null, // зависит от public
-		// 'exclude_from_search' => null, // зависит от public
-		// 'show_ui'             => null, // зависит от public
-		// 'show_in_nav_menus'   => null, // зависит от public
+		// 'publicly_queryable'  => null,
+		// 'exclude_from_search' => null,
+		// 'show_ui'             => null,
+		// 'show_in_nav_menus'   => null,
 		'show_in_menu'  => true,
-		// показывать ли в меню адмнки
-		// 'show_in_admin_bar'   => null, // зависит от show_in_menu
+		// 'show_in_admin_bar'   => null,
 		'show_in_rest'  => null,
-		// добавить в REST API. C WP 4.7
 		'rest_base'     => null,
 		// $post_type. C WP 4.7
-		'menu_position' => null,
+		'menu_position' => 5,
 		'menu_icon'     => 'dashicons-location',
 		//'capability_type'   => 'post',
-		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
-		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
+		//'capabilities'      => 'post',
+		//'map_meta_cap'      => null,
 		'hierarchical'  => false,
 		'supports'      => [ 'title' ],
 		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'

@@ -22,7 +22,6 @@
                 <div class="row">
 					<?php if ( $countries ): ?>
 						<?php foreach ( $countries as $country ): ?>
-
                             <div class="col-md-4">
                                 <a class="country-link" href="<?php echo get_permalink( $country->ID ); ?>">
                                     <div class="country">
@@ -37,8 +36,6 @@
                                     </div>
                                 </a>
                             </div>
-
-
 						<?php endforeach; ?>
 					<?php endif; ?>
                 </div>
@@ -46,7 +43,7 @@
             </div>
         </div>
         <div class="col-md-4">
-	        <?php get_template_part( 'template-parts/sidebars/sidebar', 'index' ) ?>
+			<?php get_template_part( 'template-parts/sidebars/sidebar', 'index' ) ?>
         </div>
     </div>
 

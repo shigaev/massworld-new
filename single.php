@@ -10,7 +10,7 @@
 					}
 					?>
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                        <h2><?php the_title(); ?></h2>
+                        <h2 class="single-post__title"><?php the_title(); ?></h2>
                         <div class="date-author">
                             <span class="date-author__item">Date:</span> <span
                                     class="date-author__self"><?php the_time( "d M Y" ); ?></span>
@@ -23,7 +23,7 @@
 						if ( has_post_thumbnail() ) {
 							the_post_thumbnail();
 						} else {
-							echo "<img src='" . get_template_directory_uri() . '/assets/img/no_image.png' . "'>";
+							echo "<img src='" . get_template_directory_uri() . '/assets/img/not-image.png' . "'>";
 						}
 						?>
 						<?php the_content(); ?>
@@ -34,29 +34,6 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
 				<?php get_template_part( 'template-parts/sidebars/sidebar', 'post' ) ?>
-                <hr>
-				<?php
-				/*				$countries = get_posts( array(
-									'post_type'  => 'countries',
-									'meta_query' => array(
-										array(
-											'key'     => 'country_news',
-											// name of custom field
-											'value'   => '"' . get_the_ID() . '"',
-											// matches exactly "123", not just 123. This prevents a match for "1234"
-											'compare' => 'LIKE'
-										)
-									)
-								) );
-								*/ ?><!--
-
-				<?php /*foreach ( $countries as $country ): */ ?>
-                    <a href="<?php /*echo $country->guid; */ ?>">
-						<?php /*echo $country->post_name; */ ?>
-                    </a>
-				--><?php /*endforeach; */ ?>
-
-
             </div>
         </div>
     </div>

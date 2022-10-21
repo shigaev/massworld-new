@@ -10,15 +10,15 @@
 
   .main-country__item {
     display: inline-block;
-    width: 70px;
-    height: 40px;
+    width: 60px;
+    height: 30px;
   }
 
   .main-country__title {
     padding: 0 10px;
     margin: 0;
     color: #000000;
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -31,17 +31,24 @@
 }
 
 .single-country {
-  .single-country__title {
+  .single-country__wrapper {
+    display: flex;
+    align-items: center;
+    padding: 20px 0 5px 0;
+  }
 
+  .single-country__title {
+    //padding-top: 10px;
+    padding: 0 15px;
   }
 
   .single-country__image {
-    max-width: 300px;
+    max-width: 170px;
   }
 
-  .single-country__region {
-    padding: 10px 0;
-  }
+  //.single-country__region {
+  //  padding: 10px 0;
+  //}
 }
 
 .country-link {

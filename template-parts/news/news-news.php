@@ -29,9 +29,7 @@ $categories = get_categories( [
 			<?php endif; ?>
 		<?php endforeach; ?>
         <div class="row">
-			<?php
-
-			foreach ( $categories as $key => $category ): ?>
+			<?php foreach ( $categories as $key => $category ): ?>
 				<?php $category_visible = get_field( 'category_visible', get_term( $category->term_id ) ); ?>
 				<?php if ( $category->parent == 4 && $category_visible == 'Show' ): ?>
 					<?php
@@ -87,7 +85,14 @@ $categories = get_categories( [
                             </div>
                             <div class="categories-content">
                                 <div class="categories__img"
-                                     style="background: url(<?php echo get_the_post_thumbnail_url( $recent_entries->ID ); ?>) center center no-repeat;
+                                     style="background: url(
+								     <?php
+								     if ( get_the_post_thumbnail_url( $recent_entries->ID ) !== false ) {
+									     echo get_the_post_thumbnail_url( $recent_entries->ID );
+								     } else {
+									     echo get_template_directory_uri() . '/assets/img/not-image.png';
+								     }
+								     ?>) center center no-repeat;
                                              background-size: cover;
                                              border-radius: 5px;"
                                 >
@@ -107,7 +112,13 @@ $categories = get_categories( [
                                         <div class="news-post">
                                             <div class="news-post-inner">
                                                 <div class="news-post-inner__img"
-                                                     style="background: url(<?php echo get_the_post_thumbnail_url( $post->ID ); ?>) no-repeat center center;background-size: cover; border-radius: 5px;">
+                                                     style="background: url(<?php
+												     if ( has_post_thumbnail() ) {
+													     echo get_the_post_thumbnail_url( $post->ID );
+												     } else {
+													     echo get_template_directory_uri() . '/assets/img/no_image.png';
+												     }
+												     ?>) no-repeat center center;background-size: cover; border-radius: 5px;">
                                                 </div>
                                                 <div class="news-post-inner__title">
                                                     <a class="news-post-inner__link"
@@ -115,11 +126,10 @@ $categories = get_categories( [
 														<?php echo $post->post_title; ?>
                                                     </a>
                                                     <div class="post-time">
-		                                                <?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago' ?>
+														<?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago' ?>
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
 									<?php endif; ?>
 								<?php endforeach; ?>

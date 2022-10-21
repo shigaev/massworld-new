@@ -4,6 +4,10 @@
   margin-bottom: 3rem;
   margin-top: 1rem;
 
+  .right-sidebar__countries {
+    padding: 10px 0;
+  }
+
   &__title {
     @include title;
     margin: $_10px 0;
