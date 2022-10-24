@@ -10,6 +10,7 @@
 					}
 					?>
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
                         <h2 class="single-post__title"><?php the_title(); ?></h2>
                         <div class="date-author">
                             <span class="date-author__item">Date:</span> <span

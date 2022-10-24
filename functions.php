@@ -47,9 +47,9 @@ function getScriptHash( $path ) {
 function add_massworld_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.css' );
+	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.min.3489fe87b29098ee307497fc2.css' );
 
-	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', '', '', true );
+	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.min.65e822426c3fa94d94b758ba1.js', '', '', true );
 }
 
 function remove_version_info() {
@@ -297,8 +297,8 @@ add_action( 'init', function () {
 	 * Test post_type
 	 */
 	register_post_type( 'countries', [
-		'label'         => null,
-		'labels'        => [
+		'label'               => null,
+		'labels'              => [
 			'name'               => 'All countries',
 			'singular_name'      => 'Country',
 			'add_new'            => 'Add country',
@@ -312,33 +312,33 @@ add_action( 'init', function () {
 			'parent_item_colon'  => 'Countries',
 			'menu_name'          => 'Countries',
 		],
-		'description'   => '',
-		'public'        => true,
-		// 'publicly_queryable'  => null,
-		// 'exclude_from_search' => null,
-		// 'show_ui'             => null,
-		// 'show_in_nav_menus'   => null,
-		'show_in_menu'  => null,
-		// 'show_in_admin_bar'   => null,
-		'show_in_rest'  => null,
-		'rest_base'     => null,
+		'description'         => '',
+		'public'              => true,
+		'publicly_queryable'  => true,
+		'exclude_from_search' => false,
+		'show_ui'             => true,
+		'show_in_nav_menus'   => true,
+		'show_in_menu'        => true,
+		'show_in_admin_bar'   => true,
+		'show_in_rest'        => null,
+		'rest_base'           => null,
 		// $post_type. C WP 4.7
-		'menu_position' => 4,
-		'menu_icon'     => 'dashicons-admin-site-alt3',
+		'menu_position'       => 4,
+		'menu_icon'           => 'dashicons-admin-site-alt3',
 		//'capability_type'   => 'post',
 		//'capabilities'      => 'post',
 		//'map_meta_cap'      => null,
-		'hierarchical'  => false,
-		'supports'      => [ 'title', 'thumbnail' ],
+		'hierarchical'        => false,
+		'supports'            => [ 'title', 'thumbnail' ],
 		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-		'taxonomies'    => [],
-		'has_archive'   => true,
-		'rewrite'       => true,
-		'query_var'     => true,
+		'taxonomies'          => [],
+		'has_archive'         => true,
+		'rewrite'             => true,
+		'query_var'           => true,
 	] );
 	register_post_type( 'regions', [
-		'label'         => null,
-		'labels'        => [
+		'label'               => null,
+		'labels'              => [
 			'name'               => 'All regions',
 			'singular_name'      => 'Region',
 			'add_new'            => 'Add region',
@@ -352,29 +352,29 @@ add_action( 'init', function () {
 			'parent_item_colon'  => 'Region',
 			'menu_name'          => 'Regions',
 		],
-		'description'   => '',
-		'public'        => true,
-		// 'publicly_queryable'  => null,
-		// 'exclude_from_search' => null,
-		// 'show_ui'             => null,
-		// 'show_in_nav_menus'   => null,
-		'show_in_menu'  => true,
-		// 'show_in_admin_bar'   => null,
-		'show_in_rest'  => null,
-		'rest_base'     => null,
+		'description'         => '',
+		'public'              => true,
+		'publicly_queryable'  => true,
+		'exclude_from_search' => false,
+		'show_ui'             => true,
+		'show_in_nav_menus'   => true,
+		'show_in_menu'        => true,
+		'show_in_admin_bar'   => true,
+		'show_in_rest'        => null,
+		'rest_base'           => null,
 		// $post_type. C WP 4.7
-		'menu_position' => 5,
-		'menu_icon'     => 'dashicons-location',
+		'menu_position'       => 5,
+		'menu_icon'           => 'dashicons-location',
 		//'capability_type'   => 'post',
 		//'capabilities'      => 'post',
 		//'map_meta_cap'      => null,
-		'hierarchical'  => false,
-		'supports'      => [ 'title' ],
+		'hierarchical'        => false,
+		'supports'            => [ 'title' ],
 		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-		'taxonomies'    => [],
-		'has_archive'   => true,
-		'rewrite'       => true,
-		'query_var'     => true,
+		'taxonomies'          => [],
+		'has_archive'         => true,
+		'rewrite'             => true,
+		'query_var'           => true,
 	] );
 } );
 

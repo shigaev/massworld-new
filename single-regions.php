@@ -5,8 +5,12 @@
     <div class="row">
         <div class="col-md-8">
             <div class="single-country py-3">
-                <h1 class="single-country__title"><?php the_title(); ?></h1>
-                <h2 class="single-country__region">Conutries:</h2>
+                <span id="breadcrumbs">
+                    <a href="/<?php echo $post->post_type; ?>">
+                        <?php echo ucfirst( $post->post_type ); ?>
+                    </a> &raquo;
+                </span>
+                <h1 class="single-country__title regions"><?php the_title(); ?></h1>
 				<?php
 				$countries = get_posts( array(
 					'post_type'  => 'countries',

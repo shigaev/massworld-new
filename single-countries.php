@@ -2,36 +2,59 @@
 <?php while ( have_posts() ) : the_post(); ?>
     <div class="row">
         <div class="col-md-8">
-
             <div class="single-country py-3">
-                <h2 class="single-country__region">Regions:</h2>
-				<?php $locations = get_field( 'region' ); ?>
+				<?php
+
+				$locations = get_field( 'region' );
+
+				if ( $locations !== null ) {
+					$end_array_elem = end( $locations );
+				} else {
+					$end_array_elem = '';
+				}
+
+				?>
 				<?php if ( isset( $locations ) && ! empty( $locations ) ): ?>
                     <span id="breadcrumbs">
-						<?php foreach ( $locations as $location ): ?>
+						<?php foreach ( $locations as $key => $location ): ?>
                             <span class="breadcrumbs__item">
-                                <a href="<?php echo get_permalink( $location->ID ); ?>">
+                                <?php if ( $key == 0 ): ?>
+                                    <a href="/<?php echo $location->post_type ?>/"><?php echo ucfirst( $location->post_type ); ?></a> &raquo;
+                                <?php endif; ?>
+								<?php if ( $location == $end_array_elem ) : ?>
+                                    <a href="<?php echo get_permalink( $location->ID ); ?>">
+									<?php echo get_the_title( $location->ID ); ?>
+                                </a>
+								<?php else: ?>
+                                    <a href="<?php echo get_permalink( $location->ID ); ?>">
 									<?php echo get_the_title( $location->ID ); ?>
                                 </a> &raquo;
+								<?php endif; ?>
                             </span>
 						<?php endforeach; ?>
                     </span>
 				<?php endif; ?>
                 <div class="single-country__wrapper">
-                    <div class="single-country__image">
-						<?php
-						if ( has_post_thumbnail() ) {
-							the_post_thumbnail();
-						} else {
-							echo "<img src='" . get_template_directory_uri() . '/assets/img/not-image.png' . "' >";
-						}
-						?>
+                    <div class="single-country__image"
+                         style="background: url(<?php
+
+					     if ( has_post_thumbnail( $post->ID ) ) {
+						     echo get_the_post_thumbnail_url( $post->ID );
+					     } else {
+						     echo get_template_directory_uri() . '/assets/img/not-image.png';
+					     }
+
+					     ?>) center center no-repeat;width: 70px;
+                                 height: 35px;
+                                 background-size: cover;
+                                 padding: 0;
+                                 margin: 0;">
                     </div>
                     <h1 class="single-country__title"><?php the_title(); ?></h1>
                 </div>
             </div>
             <div class="related-news">
-                <h2>Related news:</h2>
+                <h2 class="related-news__title">Related news:</h2>
 				<?php
 				$countries = get_posts( array(
 					'post_type'  => 'post',

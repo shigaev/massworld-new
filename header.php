@@ -21,9 +21,7 @@
     </script>
 	<?php wp_head(); ?>
 </head>
-
 <body>
-
 <header class="header">
     <div class="container-lg">
         <div class="nav">
@@ -37,7 +35,6 @@
                     </a>
 				<?php endif; ?>
             </div>
-
             <div class="nav-menu-wrapper">
                 <div class="nav-menu">
 					<?php
@@ -110,7 +107,6 @@
                     </label>
                 </div>
             </div>
-
             <div class="nav-toggler">
                 <div class="nav-toggler__row"></div>
             </div>
@@ -122,7 +118,5 @@
             <div class="search-close"></div>
         </div>
     </div>
-
 </header>
-
 <div class="container-lg">
