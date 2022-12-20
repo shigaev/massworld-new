@@ -47,9 +47,9 @@ function getScriptHash( $path ) {
 function add_massworld_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.min.3489fe87b29098ee307497fc2.css' );
+	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.css' );
 
-	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.min.65e822426c3fa94d94b758ba1.js', '', '', true );
+	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', '', '', true );
 }
 
 function remove_version_info() {

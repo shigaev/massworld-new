@@ -5,12 +5,31 @@
             <div class="col-lg-8 col-md-8 col-sm-12 py-3">
                 <div class="post-paragraph">
 					<?php
-					if ( function_exists( 'yoast_breadcrumb' ) ) {
-						yoast_breadcrumb( '<span id="breadcrumbs">', '</p>' );
+
+					$pattern   = '/\/countries\/[a-z][A-Z]+\//i';
+					$host_path = parse_url( $_SERVER['HTTP_REFERER'] )['path'];
+
+					preg_match( $pattern, $host_path, $matches );
+
+					if ( $matches[0] == $host_path ) {
+						echo "<span id='breadcrumbs'><span class='breadcrumbs__item'>";
+						echo "<a href='/regions/'>Regions</a>";
+						echo "</span></span>";
+
+					} else {
+						if ( function_exists( 'yoast_breadcrumb' ) ) {
+							yoast_breadcrumb( '<span id="breadcrumbs">', '</p>' );
+						}
 					}
+
+					$cf = get_field( 'country_news' );
+
 					?>
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+						<?php
 
+
+						?>
                         <h2 class="single-post__title"><?php the_title(); ?></h2>
                         <div class="date-author">
                             <span class="date-author__item">Date:</span> <span
